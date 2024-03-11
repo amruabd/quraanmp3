@@ -5,6 +5,7 @@ async function getReciters() {
   const chooseReciter = document.querySelector('#chooseReciter');
   const response = await fetch(`${apiUrl}/reciters?language=${lang}`);
   const data = await response.json();
+  data.reciters.sort((a, b) => a.name.localeCompare(b.name));
 
   chooseReciter.innerHTML = `<option value="">إختر قارئ</option>`;
   data.reciters.forEach(reciter => chooseReciter.innerHTML += `<option value="${reciter.id}">${reciter.name}</option>`);
