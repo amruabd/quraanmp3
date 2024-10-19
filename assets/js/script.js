@@ -1,18 +1,38 @@
 const apiUrl = 'https://mp3quran.net/api/v3';
 const lang = 'ar';
 
-async function getReciters() {
-  const chooseReciter = document.querySelector('#chooseReciter');
-  const response = await fetch(`${apiUrl}/reciters?language=${lang}`);
-  const data = await response.json();
-  data.reciters.sort((a, b) => a.name.localeCompare(b.name));
+document.addEventListener('DOMContentLoaded', function() {
+  async function getReciters() {
+    const recitersList = document.getElementById('recitersList');
+    const chooseReciterInput = document.getElementById('chooseReciterInput');
 
-  chooseReciter.innerHTML = `<option value="">إختر قارئ</option>`;
-  data.reciters.forEach(reciter => chooseReciter.innerHTML += `<option value="${reciter.id}">${reciter.name}</option>`);
-  chooseReciter.addEventListener('change', e => getMoshaf(e.target.value));
-}
+    if (!recitersList || !chooseReciterInput) {
+      console.error('Elemente mit den IDs "recitersList" oder "chooseReciterInput" nicht gefunden.');
+      return;
+    }
 
-getReciters();
+    const response = await fetch(`${apiUrl}/reciters?language=${lang}`);
+    const data = await response.json();
+    data.reciters.sort((a, b) => a.name.localeCompare(b.name));
+
+    recitersList.innerHTML = "";
+    data.reciters.forEach(reciter => {
+      const option = document.createElement('option');
+      option.value = reciter.name;
+      option.dataset.reciterId = reciter.id;
+      recitersList.appendChild(option);
+    });
+
+    chooseReciterInput.addEventListener('input', e => {
+      const selectedOption = [...recitersList.options].find(option => option.value === e.target.value);
+      if (selectedOption) {
+        getMoshaf(selectedOption.dataset.reciterId);
+      }
+    });
+  }
+
+  getReciters();
+});
 
 async function getMoshaf(reciter) {
   const chooseMoshaf = document.querySelector('#chooseMoshaf');
@@ -32,34 +52,38 @@ async function getMoshaf(reciter) {
 }
 
 async function getSurah(surahServer, surahList) {
-
-  const chooseSurah = document.querySelector('#chooseSurah');
-
+  const surahListElement = document.querySelector('#surahList');
+  const chooseSurahInput = document.querySelector('#chooseSurahInput');
   const response = await fetch(`https://mp3quran.net/api/v3/suwar?language=ar`);
   const data = await response.json();
   const surahNames = data.suwar;
 
   surahList = surahList.split(',');
-  chooseSurah.innerHTML = `<option value="">إختر سوره</option>`
+  surahListElement.innerHTML = '';
   surahList.forEach(surah => {
     const padSurah = surah.padStart(3, '0');
     surahNames.forEach(surahName => {
       if (surahName.id == surah) {
-        chooseSurah.innerHTML += `<option value="${surahServer}${padSurah}.mp3">${surahName.name}</option>`
+        const option = document.createElement('option');
+        option.value = surahName.name;
+        option.dataset.surahMp3 = `${surahServer}${padSurah}.mp3`;
+        surahListElement.appendChild(option);
       }
-    })
-  })
-
-  chooseSurah.addEventListener('change', e => {
-    const selctedSurah = chooseSurah.options[chooseSurah.selectedIndex];
-    playSurah(selctedSurah.value);
+    });
   });
 
-  function playSurah(surahMp3) {
-    const audioPlayer = document.querySelector('#audioPlayer');
-    audioPlayer.src = surahMp3;
-    audioPlayer.play();
-  }
+  chooseSurahInput.addEventListener('input', e => {
+    const selectedOption = [...surahListElement.options].find(option => option.value === e.target.value);
+    if (selectedOption) {
+      playSurah(selectedOption.dataset.surahMp3);
+    }
+  });
+}
+
+function playSurah(surahMp3) {
+  const audioPlayer = document.querySelector('#audioPlayer');
+  audioPlayer.src = surahMp3;
+  audioPlayer.play();
 }
 
 function playLive(channel) {

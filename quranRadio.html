@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
 
-
   <title>موقع القرآن الكريم</title>
 
   <!-- Bootstrap core CSS -->
@@ -74,16 +73,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#">استعراض السور</a>
+              <a class="nav-link active" href="index.html">استعراض السور</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#liveVideo">بث مباشر</a>
+              <a class="nav-link" href="index.html#liveVideo">بث مباشر</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="tafseer.html">تفاسير</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="quranRadio.html">راديو</a>
+              <a class="nav-link" href="#">راديو</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="quraanPDF.html">مصحف التجويد </a>
@@ -114,30 +113,12 @@
         <div class="col-lg-12">
           <form id="search-form" name="gs" method="submit" role="search" action="#">
             <div class="row">
-              <div class="col-lg-4">
+              <div class="col-lg-3">
                 <fieldset>
-                  <label for="chooseReciterInput" class="form-label">إختر قارئ</label>
-                  <input list="recitersList" id="chooseReciterInput" name="Category" class="form-select"
-                    aria-label="Default select example">
-                  <datalist id="recitersList">
-                  </datalist>
-                </fieldset>
-              </div>
-              <div class="col-lg-4">
-                <fieldset>
-                  <label for="chooseMoshaf" class="form-label">إختر قرأه</label>
-                  <select name="Price" class="form-select" aria-label="Default select example" id="chooseMoshaf">
-
+                  <label for="chooseRadio" class="form-label">إختر راديو</label>
+                  <select name="Radio" class="form-select" aria-label="Default select example" id="chooseRadio">
+                    <option value="">إختر راديو</option>
                   </select>
-                </fieldset>
-              </div>
-              <div class="col-lg-4">
-                <fieldset>
-                  <label for="chooseSurahInput" class="form-label">إختر سوره</label>
-                  <input list="surahList" id="chooseSurahInput" name="Plan" class="form-select"
-                    aria-label="Default select example">
-                  <datalist id="surahList">
-                  </datalist>
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -154,28 +135,7 @@
       </div>
     </div>
   </div>
-  <section class="contact-us" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center mb-4">
-          <h2>إختر البث المباشر</h2>
-          <span class="white-button">
-            <a href="javascript:void()" onclick="playLive('https://win.holol.com/live/quran/playlist.m3u8')">قناه القرآن
-              الكريم </a>
-          </span>
-          <span class="white-button">
-            <a href="javascript:void()" onclick="playLive('https://win.holol.com/live/sunnah/playlist.m3u8')">قناه السنه
-              النبويه </a>
-          </span>
-        </div>
-        <video id="liveVideo" width="100%" controls>
-          <source src="" type="video/mp4">
-          <source src="" type="video/ogg">
-          Your browser does not support HTML video.
-        </video>
-      </div>
-    </div>
-  </section>
+  
 
 
   <footer>
@@ -278,6 +238,7 @@
   <script src="assets/js/owl-carousel.js"></script>
 
   <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/radio.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/script.js"></script>
