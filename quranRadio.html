@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+
+  <title>موقع القرآن الكريم</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-572-designer.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <!-- TemplateMo 572 Designer https://templatemo.com/tm-572-designer -->
+</head>
+
+<body>
+
+  <div class="loader">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" width="34px" height="40px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;"
+      xml:space="preserve">
+      <rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.8s"
+          repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.8s"
+          repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.8s"
+          repeatCount="indefinite" />
+      </rect>
+      <rect x="8" y="10" width="4" height="10" fill="#333" opacity="0.2">
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.8s"
+          repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.8s"
+          repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.8s"
+          repeatCount="indefinite" />
+      </rect>
+      <rect x="16" y="10" width="4" height="10" fill="#333" opacity="0.2">
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.8s"
+          repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.8s"
+          repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.8s"
+          repeatCount="indefinite" />
+      </rect>
+    </svg>
+  </div>
+
+  <header id="#top">
+
+    <nav class="main-navigation navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img class="logo"
+            src="https://play-lh.googleusercontent.com/CYyP9b2cCfe3XK-36Swm49ZdfwTLC2rb1zkDlIJ6iGkuS5LHbEC-j0uEqIl4540-LSg=w240-h480-rw"
+            alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">استعراض السور</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#liveVideo">بث مباشر</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tafseer.html">تفاسير</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">راديو</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quraanPDF.html">مصحف التجويد </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <div class="main-banner change-name">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header-text">
+            <h2 style="color: rgb(40, 0, 48);">رحلة طيبه في رحاب</h2>
+            <h2><em>القرآن </em>الكريم</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-form" id="search-form-div">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form id="search-form" name="gs" method="submit" role="search" action="#">
+            <div class="row">
+              <div class="col-lg-3">
+                <fieldset>
+                  <label for="chooseRadio" class="form-label">إختر راديو</label>
+                  <select name="Radio" class="form-select" aria-label="Default select example" id="chooseRadio">
+                    <option value="">إختر راديو</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <audio id="audioPlayer" controls autoplay muted style=" width: 100%;">
+                  <source src="" type="audio/ogg">
+                  <source src="" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="about-widget">
+            <img
+              src="data:image/png;base64,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"
+              alt="designer template by TemplateMo">
+          </div>
+        </div>
+        <div class="col-lg-2 offset-lg-2">
+          <div class="location-widget">
+            <h4>Our Location</h4>
+            <p> Germany, <br> Berlin, <br>mitte 10799</p>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="customer-care">
+            <h4>Customer Care</h4>
+            <ul class="info">
+              <li><a href="#">xxx-xxx-xxxx</a></li>
+              <li><a href="#">xxx-xxx-xxxx</a></li>
+              <li><a href="#">info@amruabd.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="follow-us">
+            <h4>Follow Us</h4>
+            <ul class="social-links">
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-twitter" viewBox="0 0 16 16">
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                  </svg>
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-linkedin" viewBox="0 0 16 16">
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                  </svg>
+                  Linkedin
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="sub-footer">
+            <div class="row">
+              <div class="col-lg-6">
+                <p>Copyright © 2024 Designer Co., Ltd. All Rights Reserved.
+
+                  <br>Design:
+                <h6>Amru Abd</h6>
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <a href="#top" class="scroll-to-top">
+                  Go to Top
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/radio.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    setTimeout(function () {
+      $('.loader').fadeToggle();
+    }, 1500);
+
+    $("a[href='#top']").click(function () {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  </script>
+
+</body>
+
+</html>
