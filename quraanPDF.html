@@ -116,14 +116,12 @@
             <h2>مصحف التجويد</h2>
             <div class="button-group mb-3">
               <button class="btn btn-primary" onclick="downloadPDF()">Download PDF</button>
-              <a href="https://drive.google.com/file/d/1gS45HQYdiSLFeLmwQP1grL1J0JVCLNh2/preview" target="_blank">
-                <button class="btn btn-secondary" >Vollbild</button>
+              <a href="https://drive.google.com/uc?id=1gS45HQYdiSLFeLmwQP1grL1J0JVCLNh2" target="_blank">
+                <button class="btn btn-secondary">Vollbild</button>
               </a>
-              
             </div>
             <div class="pdf-container" id="pdf-container">
-              <embed
-                src="https://drive.google.com/file/d/1gS45HQYdiSLFeLmwQP1grL1J0JVCLNh2/preview"
+              <embed src="https://drive.google.com/file/d/1gS45HQYdiSLFeLmwQP1grL1J0JVCLNh2/preview"
                 type="application/pdf" width="100%" height="1500px" />
             </div>
           </div>
@@ -264,8 +262,8 @@
       });
     }
     function downloadPDF() {
-        const pdfUrl = "https://storage.googleapis.com/quran-online/QuraanPDF/Noor-Book.com%20%20%D9%85%D8%B5%D8%AD%D9%81%20%D8%A7%D9%84%D9%85%D8%AC%D9%85%D8%B9%20%D8%A7%D9%84%D9%85%D9%84%D9%83%20%D9%81%D9%87%D8%AF%20%D9%84%201405%D9%87%203%20.pdf";
-        window.open(pdfUrl, "_blank");
-      }
+      const pdfUrl = "https://drive.google.com/uc?id=1gS45HQYdiSLFeLmwQP1grL1J0JVCLNh2";
+      window.open(pdfUrl, "_blank");
+    }
   </script>
 </body>
